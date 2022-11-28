@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Xamantha's resume</title>
+      <link rel="stylesheet" href="styles.css">
+      <script src="script.js"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&display=swap" rel="stylesheet">
+      
+   </head>
+   <body>
+      <nav>
+         <ul>
+            <li><a href="biography.html" tabindex=2>Biography</a></li>
+            <li><a href="index.html" tabindex=3>Projects</a></li>
+            <li><a href="resume_page.html" tabindex=0>Resume</a></li>
+            <li><a href="#" tabindex=1>Contact</a></li>
+         </ul>
+      </nav>
+      <div id="main-project">
+          <div id="left">
+              <h1>Checkers</h1> 
+              <img id="project-pic" src="assets/checkers.png" alt="Checker's reference picture"/>
+              <button onclick="location.href='https://github.com/xamanthalc/checkers_game'">Click to check project's github</button>
+            </div>
+          <div id="right-project">
+             <div id="project-text"> 
+               <h2>Problem/Motivation</h2>
+               <p>My friend (Charles Bugayer) and I wanted to gain experience into developing a game from zero to completion. 
+                  Our goal was to be able to replicate all functionality and UI elements. We decided to pick "Checkers" because it was one of the very few games we both were familiar enough and 
+                  because we both enjoyed playing it.</p>
+               <h2>Goals</h2>
+               <p>For the things we wanted to accomplish, we developed 10 requeriments: </p>
+               <ol>
+                  <li>Beginner state of the checker board, the three first rows in each opposite side are filled with each player in the dark squares.</li>
+                  <li>The game has a scoreboard initialized to zero for both players, every time a checker is eaten, the other player gains one point.</li>
+                  <li>Each player can move only forward diagonally one space – with a couple of exceptions explained later.</li>
+                  <li>When the mouse hovers over a position, the possible moves are highlighted.</li>
+                  <li>When the mouse clicks, the checker is moved.</li>
+                  <li>If a player has a move where it can eat a checker of the other player, then it must make that move and the eaten checker disappears from the board. If multiple checkers can be eaten, then the player is allowed to choose which one to eat.</li>
+                  <li>A player can eat more than one time in one play given that the pieces are aligned.</li>
+                  <li>When a player hits the last row of the opposite side, its checker is promoted to king status. A king piece can move both backward and forward diagonally.</li>
+                  <li>The game ends when: Player A eliminates player B, so A wins; if a player cannot move, the player loses; no player has been removed after 25 moves: draw.</li>
+                  <li>When the game ends, the winning team is highlighted to show that the game is over. </li>
+               </ol>
+               <h2>Development</h2>
+               <p>We decided to implement the game using C++ and the game engine <a href="https://tov.github.io/ge211/">ge211.</a> Through an Object Oriented Programming (OPP) approach, we created classes such as: players,
+                  board, model, etc. <br><br>
+                  Board: The board was implemented using square sprites of two colors and with a nested for-loop such as the sprites covered the canvas. <br>
+                  Player: The player tracked whether a piece was dark,light, or neither. A function to complement was: other_player (which switched the color assigened).
+                  Piece: The piece class tracked whether a piece was a standard piece, a king piece, or neither. Some functions to complement were: set_king (which upgraded status from standard to king) and is_king(which checked wheter a piece had king status). <br><br> 
+                  For more information on classes and development, please go to the github link.
+               </p>
+               <h2>Results</h2>
+               <p>We ended up with a functional game that fullfilled all requirements. Something that would be interesting in terms of UI testing would be to check whether users prefer to drag the pieces or to click on the beggining and end-point of the move. It would also be great to incorporate sound to provide a more realistic experience. Here are some pictures: </p>
+               <h3>Beggining state:</h3>
+               <img src="assets/checkers/start.png">
+               <h3>Places where the third black piece from the left can move to:</h3>
+               <img src="assets/checkers/highlight.png">
+               <h3>King piece:</h3>
+               <img src="assets/checkers/king.png">
+               <h3>End of game:</h3>
+               <img src="assets/checkers/win.png">
+             </div>
+             <div id="project-icons">
+                <img src="assets/c++.png" />
+                <img id="github" src="assets/github.png"/>
+             </div>
+          </div>
+       
+      </div>
+      <footer-2>
+         <b> Xamantha Laos Cueva</b>
+         <p> If you would like to contact me, please write an email to: xamanthalaos2024@u.northwestern.edu
+            <br> Looking forward to hearing from you!
+         </p>
+      </footer>
+   </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Xamantha's resume</title>
+      <link rel="stylesheet" href="styles.css">
+      <script src="script.js"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&display=swap" rel="stylesheet">
+      
+   </head>
+   <body>
+      <nav>
+         <ul>
+            <li><a href="biography.html" tabindex=2>Biography</a></li>
+            <li><a href="index.html" tabindex=3>Projects</a></li>
+            <li><a href="resume_page.html" tabindex=0>Resume</a></li>
+            <li><a href="#" tabindex=1>Contact</a></li>
+         </ul>
+      </nav>
+      <div id="main-project">
+          <div id="left">
+              <h1>Currency chatbot</h1> 
+              <img id="project-pic" src="assets/currency-chatbot.jpg" alt="Checker's reference picture"/>
+               <button onclick="location.href='https://github.com/xamanthalc/currency_chatbot'">Click to check project's github</button>
+          </div>
+          <div id="right-project">
+             <div id="project-text-2"> 
+               <h2>Problem/Motivation</h2>
+               <p>As an international student, I have been in many situations where I need to convert one currency from another and it takes some time to open google, look for the conversion, and then finally convert the currency.
+                  Since I wanted to get started doing personal projects, I decided to do somthing to address this issue. 
+               </p>
+               <h2>Goals</h2>
+               <p>My goal for this project was to have a functional chatbot where a user could ask to convert a currency throught text and obtain the result. These were the specifications: </p>
+               <ol>
+                  <li>User can communicate with bot through text (Imessage/WhatsApp/Telegram, etc.).</li>
+                  <li>The bot becomes active after user texts "Hello."</li>
+                  <li>The bot provides clear instructions to the user on how to request currency conversion.</li>
+                  <li>The chatbot support at least 4 currency exchanges.</li>
+               </ol>
+               <h2>Development</h2>
+               <p> I decided to use WhatsApp as the platform to operate my chatbot with since it is the messaging app I use the most. After looking at a couple of tutorials, I learned about Twilio's API which can be used to 
+                   send messages to any valid phone number. Thus, I decided to use the API to establish a connection between by WhatsApp and my python script. 
+                   While working on that, I used ngrok for local development setting to test my bot. <br><br>
+                   Once I established a connection with Twilio's API, I wrote the script such that "Hello" was the trigger word and anything different repplied "Sorry, I did not understand :(."
+                   To "hello," the bot repplie with instructions on how to request a currency exchange. <br><br>
+                   For the currency exchange, I began with four currencies: PEN (peruvian currency), USD, EUR, and CRC (Costa Rica's currency). I hard-coded the conversion using the day's rates. <br><br>
+                   However, I was not satisfied with this since currencies' exchanges change every day, so my bot could be obsolete the very next day. Because of this, I decided to look for currency APIs. I found one in "RapidAPIs" that supported +15 currencies. 
+                   Thus, I shifted from the hard-coding approach to using the API's information. Finally, I deployed my code through Heroku using Github so any person could use it.    
+               </p>
+               <h2>Results</h2>
+               <p>I developed a fully functional chatbot that handle +15 chatbot conversions which exceeded my original goals. Moreover, the bot self-updates every day using the API. 
+                  I invite you to try it out: </p>
+                  <ol>
+                     <li>Add the number +1 (415) 523-8886 to your contacts.</li>
+                     <li>Text "Join blew -rew" (this is only needed the very first time you use it/after you stopped using the chatbot for a long time). You should receive a confirmation message that says that you are all set.</li>
+                     <li>Text "Hello" (if you already know how to request a currency exchange, you could skip this). The bot will give you instructions on how to request an exchange.</li>
+                     <li>Request you exchange. Some examples: "From JPY to EUR value 1000," "From USD to AUD value 24"</li>
+                     <li>Get the conversion!</li>
+                  </ol>
+               <p>Here are some pictures:</p>
+               
+               <h3>Full example:</h3>
+               <img src="assets/chatbot-currency/full.jpg">
+               <h3>Not valid request:</h3>
+               <img src="assets/chatbot-currency/not_valid.jpg">
+            </div>
+            <div id="project-icons">
+                <img src="assets/python.png" alt="Python logo" />
+                <img id="github" src="assets/github.png" alt="Github logo"/>
+                <img src="assets/twilio.png" alt="Twilio logo">
+                <img src="assets/rapidapi-logo.png" alt="RapidAPI logo">
+                <img src="assets/ngrok-logo.png" alt="Ngrok logo">
+                <img src="assets/heroku-logo.webp" alt="Heroku logo">
+            </div>
+          </div>
+       
+      </div>
+      <footer-2>
+         <b> Xamantha Laos Cueva</b>
+         <p> If you would like to contact me, please write an email to: xamanthalaos2024@u.northwestern.edu
+            <br> Looking forward to hearing from you!
+         </p>
+      </footer>
+   </body>
+</html>
